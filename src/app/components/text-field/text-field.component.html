@@ -1,0 +1,11 @@
+<div (click)="textField.focus()" class="{{ state === 'focused' ? 'focused' : state === 'filled' ? 'filled' : '' }}" aria-roledescription="textbox" role="textbox">
+  <div>
+    <div>
+      <div class="body-small">{{ label }}</div>
+      <h3 class="{{state === 'focused' || state === 'filled' ? 'body-small' : 'body-large'}}">{{ label }}</h3>
+      <input #textField class="body-large" type="text" (blur)="input === '' ? state = 'empty' : state = 'filled'" (focus)="this.state = 'focused'" (input)="handleInput($event)" value="{{ input }}" />
+    </div>
+    <app-icon-button *ngIf="trailingIcon" icon="{{ trailingIcon }}"></app-icon-button>
+  </div>
+</div>
+<p *ngIf="supportingText" class="body-small">{{ supportingText }}</p>

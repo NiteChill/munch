@@ -1,0 +1,59 @@
+.button {
+  display: flex;
+  border-radius: 100rem;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border: none;
+  background: none;
+  & > div {
+    transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
+    display: flex;
+    padding: 0.625rem 1.25rem;
+    border-radius: inherit;
+  }
+}
+
+.standard {
+  background: var(--primary);
+  & > div > p {
+    color: var(--on-primary);
+  }
+  &:hover > div {
+    background: color-mix(in srgb, var(--on-primary) 8%, transparent);
+  }
+  &:active > div {
+    background: color-mix(in srgb, var(--on-primary) 12%, transparent);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--on-surface);
+    & > div {
+      background: color-mix(in srgb, var(--on-primary) 16%, transparent);
+    }
+  }
+}
+
+.text {
+  & > div > p {
+    color: var(--primary);
+  }
+  &:hover > div {
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+  }
+  &:active > div {
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--on-surface);
+    & > div {
+      background: color-mix(in srgb, var(--primary) 16%, transparent);
+    }
+  }
+  &.disabled {
+    pointer-events: none;
+    & > div > p {
+      color: var(--on-surface);
+      opacity: 0.38;
+    }
+  }
+}

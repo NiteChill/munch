@@ -1,0 +1,25 @@
+<app-navbar
+  title="New recipe"
+  page="create"
+  class="p-l"
+  [form]="data"
+></app-navbar>
+<main>
+  <div>
+    <label for="image">
+      <input type="file" name="image" accept="image/*" id="image" (input)="handleFile($event)" />
+      <div>
+        <span *ngIf="!data.image" class="material-symbols-rounded">
+          add_photo_alternate
+        </span>
+        <img *ngIf="data.image" src="{{ data.image }}" alt="recipe" />
+      </div>
+      <p class="body-small">Choose image</p></label
+    >
+  </div>
+  <app-text-field
+    (output)="this.data.title = $event"
+    label="Name this recipe"
+    trailingIcon=""
+  ></app-text-field>
+</main>

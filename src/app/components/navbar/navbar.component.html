@@ -1,0 +1,16 @@
+<app-icon-button
+  *ngIf="page === 'create'"
+  icon="arrow_back"
+  (click)="back()"
+></app-icon-button>
+<h1 class="title-large" [style.paddingLeft]="page == 'create' ? '0.25rem' : 0">
+  {{ title }}
+</h1>
+<app-icon-button
+  *ngIf="page !== 'create'"
+  icon="add"
+  routerLink="/create"
+  tabindex="-1"
+></app-icon-button>
+<app-icon-button *ngIf="page !== 'create'" icon="more_vert"></app-icon-button>
+<app-button [disabled]="form.title === '' || form.image === '' || form.ingredients === [] || form.instructions === []" *ngIf="page === 'create'" label="Save" btnStyle="text" [style.marginRight]="page == 'create' ? '0.25rem' : 0"></app-button>

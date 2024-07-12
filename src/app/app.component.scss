@@ -1,0 +1,13 @@
+:host {
+  display: contents;
+  overflow: hidden;
+  height: 100dvh;
+  width: 100vw;
+}
+
+.app {
+  background: var(--surface-container-lowest);
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+}

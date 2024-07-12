@@ -1,0 +1,46 @@
+.icon-button {
+  display: flex;
+  padding: 0.25rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 100rem;
+  & > div {
+    display: flex;
+    border-radius: inherit;
+    & > div {
+      display: flex;
+      padding: 0.5rem;
+      border-radius: inherit;
+      transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+}
+
+.standard {
+  & > div > div > span {
+    color: var(--on-surface-variant);
+  }
+  &:hover > div > div {
+    background: color-mix(in srgb, var(--on-surface-variant) 8%, transparent);
+  }
+  &:active > div > div {
+    background: color-mix(in srgb, var(--on-surface-variant) 12%, transparent);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--on-surface);
+    outline-offset: -4px;
+    & > div > div {
+      background: color-mix(
+        in srgb,
+        var(--on-surface-variant) 16%,
+        transparent
+      );
+    }
+  }
+  &.active > div > div > span {
+    color: var(--primary);
+    font-variation-settings: "FILL" 1;
+  }
+}

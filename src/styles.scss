@@ -1,0 +1,16 @@
+@import './app//assets/theme/dark.css';
+@import './app//assets/font/font.scss';
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: 100dvh;
+  width: 100vw;
+}
