@@ -9,6 +9,7 @@ export const routes: Routes = [
   {
     path: 'pages',
     component: PagesComponent,
+    data: { animationState: 'pages' },
     children: [
       {
         path: 'home',

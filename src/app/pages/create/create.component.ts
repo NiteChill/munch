@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { TextFieldComponent } from '../../components/text-field/text-field.component';
 import { NgIf } from '@angular/common';
@@ -14,8 +14,8 @@ export class CreateComponent {
   data = {
     title: '',
     image: '',
-    ingredients: [],
-    instructions: [],
+    ingredients: [''],
+    instructions: [''],
   };
 
   handleFile(e: Event) {
@@ -23,7 +23,6 @@ export class CreateComponent {
     const reader = new FileReader();
     reader.onload = () => {
       this.data.image = reader.result as string;
-      console.log(this.data);
     };
     reader.readAsDataURL(file);
   }

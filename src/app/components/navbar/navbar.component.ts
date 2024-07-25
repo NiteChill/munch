@@ -19,7 +19,7 @@ import { ButtonComponent } from '../button/button.component';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  @Input() title: string = '';
+  @Input() label: string = '';
   @Input() scroll: boolean = false;
   @Input() page: String = '';
   @Input() form = {
@@ -32,5 +32,13 @@ export class NavbarComponent {
   constructor(private location: Location) {}
   back() {
     this.location.back();
+  }
+
+  handleSave() {
+    try {
+      localStorage.setItem('munch', JSON.stringify(this.form));
+    } catch {
+      alert('Failed to save recipe. Please make sure localstorage is allowed.');
+    }
   }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { BottomNavbarComponent } from '../components/bottom-navbar/bottom-navbar.component';
-import { routeTransition } from '../routeTransition';
+import { pagesTransition } from '../routeTransition';
 
 @Component({
   selector: 'app-pages',
@@ -10,7 +10,7 @@ import { routeTransition } from '../routeTransition';
   imports: [NavbarComponent, BottomNavbarComponent, RouterOutlet],
   templateUrl: './pages.component.html',
   styleUrl: './pages.component.scss',
-  animations: [routeTransition],
+  animations: [pagesTransition],
 })
 export class PagesComponent {
   title: String = 'Munch';

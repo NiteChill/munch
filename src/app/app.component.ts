@@ -3,7 +3,7 @@ import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BottomNavbarComponent } from './components/bottom-navbar/bottom-navbar.component';
 import { routeTransition } from './routeTransition';
-const theme: string = 'light';
+const theme: string = 'dark';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,8 @@ const theme: string = 'light';
 export class AppComponent {
   title: String = 'Munch';
 
+  constructor(protected route: ActivatedRoute) { }
+  
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet &&
@@ -23,6 +25,4 @@ export class AppComponent {
       outlet.activatedRouteData['animationState']
     );
   }
-
-  constructor(protected route: ActivatedRoute) {}
 }

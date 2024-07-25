@@ -1,8 +1,8 @@
 <app-navbar
-  title="{{ title }}"
+  label="{{ title }}"
   class="{{ scroll ? 'scrolled' : '' }}"
 ></app-navbar>
-<main (scroll)="handleScroll($event)" [@routeTransition]="prepareRoute(outlet)">
+<main (scroll)="handleScroll($event)" [@pagesTransition]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </main>
 <app-bottom-navbar
