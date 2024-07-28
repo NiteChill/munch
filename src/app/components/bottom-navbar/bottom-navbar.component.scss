@@ -8,11 +8,6 @@
   padding: 0 0.5rem;
   align-items: flex-start;
   gap: 0.5rem;
-  height: 0;
   overflow: hidden;
   transition: height 0.3s cubic-bezier(0, 0, 0.2, 1);
-}
-
-:host(.visible) {
-  height: 4rem;
 }

@@ -10,5 +10,4 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './bottom-navbar.component.scss'
 })
 export class BottomNavbarComponent {
-  @Input() active: boolean = true;
 }

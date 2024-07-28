@@ -17,7 +17,7 @@ export const routeTransition = trigger('routeTransition', [
         ':leave',
         [
           animate(
-            '0.15s cubic-bezier(0.7, 0, 0.8, 0.15)',
+            '0.2s cubic-bezier(0.5, 0, 0.2, 1)',
             style({ opacity: 0, transform: 'translateX(-10%)' })
           ),
         ],
@@ -29,7 +29,7 @@ export const routeTransition = trigger('routeTransition', [
         ':enter',
         [
           animate(
-            '0.2s cubic-bezier(0.7, 0, 0.8, 0.15)',
+            '0.2s cubic-bezier(0.5, 0, 0.2, 1)',
             style({ opacity: 1, left: 0 })
           ),
         ],
@@ -48,7 +48,7 @@ export const routeTransition = trigger('routeTransition', [
         ':leave',
         [
           animate(
-            '0.2s cubic-bezier(0.7, 0, 0.8, 0.15)',
+            '0.2s cubic-bezier(0.5, 0, 0.2, 1)',
             style({ opacity: 0, left: '10%', right: 0 })
           ),
         ],
@@ -60,7 +60,7 @@ export const routeTransition = trigger('routeTransition', [
         ':enter',
         [
           animate(
-            '0.2s cubic-bezier(0.7, 0, 0.8, 0.15)',
+            '0.2s cubic-bezier(0.5, 0, 0.2, 1)',
             style({ opacity: 1, transform: 'translateX(0)' })
           ),
         ],
