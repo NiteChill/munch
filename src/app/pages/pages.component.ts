@@ -31,14 +31,5 @@ export class PagesComponent {
 
   handleScroll(e: Event) {
     this.scroll = (e.target as HTMLElement).scrollTop > 0;
-    this.bottomElements =
-      (e.target as HTMLElement).scrollHeight -
-        (e.target as HTMLElement).offsetHeight -
-        (e.target as HTMLElement).scrollTop <
-      80
-        ? true
-        : (e.target as HTMLElement).scrollTop - this.previousScroll < 0;
-
-    this.previousScroll = (e.target as HTMLElement).scrollTop;
   }
 }

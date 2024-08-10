@@ -1,4 +1,6 @@
 .app {
+  --list-bullet: url('../../assets/img/list-bullet-dark.svg');
+  
   --primary: rgb(172 199 255);
   --surface-tint: rgb(172 199 255);
   --on-primary: rgb(15 47 96);

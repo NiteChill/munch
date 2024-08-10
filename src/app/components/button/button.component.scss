@@ -6,17 +6,34 @@
   outline: none;
   border: none;
   background: none;
+  overflow: hidden;
   & > div {
     transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
     display: flex;
     padding: 0.625rem 1.25rem;
     border-radius: inherit;
+    align-items: center;
+    justify-content: center;
+    & > span {
+      font-size: 1.125rem;
+      padding-right: 0.5rem;
+    }
+    & > p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  &.icon {
+    & > div {
+      padding: 0.625rem 1.25rem 0.625rem 0.875rem;
+    }
   }
 }
 
 .standard {
   background: var(--primary);
-  & > div > p {
+  & > div > p, span {
     color: var(--on-primary);
   }
   &:hover > div {
@@ -34,7 +51,7 @@
 }
 
 .text {
-  & > div > p {
+  & > div > p, span {
     color: var(--primary);
   }
   &:hover > div {
@@ -51,7 +68,34 @@
   }
   &.disabled {
     pointer-events: none;
-    & > div > p {
+    & > div > p, span {
+      color: var(--on-surface);
+      opacity: 0.38;
+    }
+  }
+}
+
+.outlined {
+  border: 1px solid var(--outline-variant);
+  & > div > p, span {
+    color: var(--primary);
+  };
+  &:hover > div {
+    background: color-mix(in srgb, var(--primary) 8%, transparent);
+  }
+  &:active > div {
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--on-surface);
+    & > div {
+      background: color-mix(in srgb, var(--primary) 16%, transparent);
+    }
+  }
+  &.disabled {
+    pointer-events: none;
+    border: color-mix(in srgb, var(--on-surface) 12%, transparent);
+    & > div > p, span {
       color: var(--on-surface);
       opacity: 0.38;
     }

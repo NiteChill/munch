@@ -1,9 +1,10 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
   host: {
@@ -11,7 +12,9 @@ import { Component, Input } from '@angular/core';
   }
 })
 export class ButtonComponent {
+  @Input() icon: String = '';
   @Input() label: String = 'Label';
   @Input() btnStyle: String = 'standard';
   @Input() disabled: boolean = false;
+  @Input() width: String = 'auto';
 }

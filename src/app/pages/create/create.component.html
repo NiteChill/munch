@@ -1,13 +1,19 @@
 <app-navbar
   label="New recipe"
   page="create"
-  class="p-l"
+  class="p-l {{ scroll ? 'scrolled' : '' }}"
   [form]="data"
 ></app-navbar>
-<main>
-  <div>
+<main (scroll)="handleScroll($event)">
+  <div class="image">
     <label for="image">
-      <input type="file" name="image" accept="image/*" id="image" (input)="handleFile($event)" />
+      <input
+        type="file"
+        name="image"
+        accept="image/*"
+        id="image"
+        (input)="handleFile($event)"
+      />
       <div>
         <span *ngIf="!data.image" class="material-symbols-rounded">
           add_photo_alternate
@@ -22,4 +28,31 @@
     label="Name this recipe"
     trailingIcon=""
   ></app-text-field>
+  <div class="ingredients">
+    <p class="body-small">Ingredients for one person</p>
+    <div>
+      <app-chip quantity="100g" ingredient="Potatoes"></app-chip>
+      <app-chip quantity="1 teaspoon" ingredient="Milk"></app-chip>
+      <app-chip quantity="3" ingredient="Onions"></app-chip>
+    </div>
+    <app-button btnStyle="outlined" icon="add" label="Add ingredient" width="100%"></app-button>
+  </div>
+  <div class="instructions">
+    <p class="body-small">Instructions</p>
+    <div class="list">
+      <app-list-item
+        instruction="Cut the onions and put them in a pan"
+        time="5 minutes"
+      ></app-list-item>
+      <app-list-item
+        instruction="Add the milk and wait for a bit"
+        time="2 minutes"
+      ></app-list-item>
+      <app-list-item
+        instruction="Add the potatoes and let the preparation cook"
+        time="30 minutes"
+      ></app-list-item>
+      <app-button btnStyle="outlined" icon="add" label="Add instruction" width="100%"></app-button>
+    </div>
+  </div>
 </main>

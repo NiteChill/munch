@@ -1,8 +1,8 @@
-<button class="button {{ btnStyle }} {{ disabled ? 'disabled' : '' }}" tabindex="{{ disabled ? -1 : 0 }}" aria-roledescription="button" role="button">
-  <div>
-      <!-- <span class="material-symbols-outlined">
+<button class="button {{ btnStyle }} {{ disabled ? 'disabled' : '' }} {{icon ? 'icon' : ''}}" tabindex="{{ disabled ? -1 : 0 }}" [style.width]="width ? width : 'auto'" [disabled]="disabled" aria-roledescription="button" role="button">
+  <div [style.width]="width ? width : 'auto'">
+      <span *ngIf="icon" class="material-symbols-rounded">
         {{ icon }}
-      </span> -->
+      </span>
       <p class="label-large">
         {{ label }}
       </p>
