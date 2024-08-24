@@ -44,3 +44,47 @@
     font-variation-settings: "FILL" 1;
   }
 }
+
+.filled {
+  padding: 0.125rem 0.5rem;
+  & > div {
+    background: var(--secondary-container);
+    & > div {
+      padding: 0.625rem 0.25rem !important;
+      & > span {
+        color: var(--on-secondary-container);
+      }
+    }
+  }
+  &:hover > div > div {
+    background: color-mix(
+      in srgb,
+      var(--on-secondary-container) 8%,
+      transparent
+    );
+  }
+  &:active > div > div {
+    background: color-mix(
+      in srgb,
+      var(--on-secondary-container) 12%,
+      transparent
+    );
+  }
+  &:focus-visible {
+    outline: none;
+    & > div {
+      outline: 2px solid var(--on-surface);
+      & > div {
+        background: color-mix(
+          in srgb,
+          var(--on-secondary-container) 16%,
+          transparent
+        );
+      }
+    }
+  }
+  &.active > div > div > span {
+    color: var(--primary);
+    font-variation-settings: "FILL" 1;
+  }
+}

@@ -1,18 +1,21 @@
 :host {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0.25rem 0.5rem 1rem;
+  padding: 0.5rem 0.25rem;
   transition: background 0.2s cubic-bezier(0, 0, 0.2, 1);
   background: var(--surface-container-lowest);
+  height: 4.5rem;
+  flex-shrink: 0;
   width: 100vw;
-  & > h1 {
+  & > div.title {
     flex: 1;
-    color: var(--on-surface);
+    & > h1 {
+      flex: 1;
+      color: var(--on-surface);
+      text-align: center;
+    }
   }
 }
 :host(.scrolled) {
   background: var(--surface-container-low);
-}
-:host(.p-l) {
-  padding-left: 0.25rem;
 }

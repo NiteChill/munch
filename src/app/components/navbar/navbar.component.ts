@@ -35,10 +35,10 @@ export class NavbarComponent {
   }
 
   handleSave() {
-    try {
-      localStorage.setItem('munch', JSON.stringify(this.form));
-    } catch {
-      alert('Failed to save recipe. Please make sure localstorage is allowed.');
-    }
+    // try {
+    //   localStorage.setItem('munch', JSON.stringify(this.form));
+    // } catch {
+    //   alert('Failed to save recipe. Please make sure localstorage is allowed.');
+    // }
   }
 }

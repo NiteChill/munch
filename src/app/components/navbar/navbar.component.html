@@ -1,16 +1,40 @@
 <app-icon-button
-  *ngIf="page === 'create'"
+  *ngIf="page == 'create-1' || page == 'create-2'"
+  btnStyle="filled"
   icon="arrow_back"
   (click)="back()"
 ></app-icon-button>
-<h1 class="title-large" [style.paddingLeft]="page == 'create' ? '0.25rem' : 0">
-  {{ label }}
-</h1>
 <app-icon-button
-  *ngIf="page !== 'create'"
+  *ngIf="page !== 'create-1' && page !== 'create-2'"
   icon="add"
   routerLink="/create"
   tabindex="-1"
 ></app-icon-button>
-<app-icon-button *ngIf="page !== 'create'" icon="more_vert"></app-icon-button>
-<app-button (click)="form.title !== '' && form.image !== '' && form.ingredients!.length > 0 && form.instructions!.length > 0 && handleSave()" [disabled]="form.title === '' || form.image === '' || form.ingredients!.length === 0 || form.instructions!.length === 0" *ngIf="page === 'create'" label="Save" btnStyle="text" [style.marginRight]="page == 'create' ? '0.25rem' : 0"></app-button>
+<div class="title">
+  <h1
+    class="title-large"
+  >
+    {{ label }}
+  </h1>
+</div>
+<app-icon-button
+  *ngIf="page !== 'create-1' && page !== 'create-2'"
+  icon="more_vert"
+></app-icon-button>
+<app-icon-button
+  *ngIf="page == 'create-1'"
+  btnStyle="filled"
+  icon="more_vert"
+></app-icon-button>
+<app-icon-button
+  *ngIf="page === 'create-2'"
+  btnStyle="filled"
+  (click)="
+    form.title !== '' &&
+      form.image !== '' &&
+      form.ingredients!.length > 0 &&
+      form.instructions!.length > 0 &&
+      handleSave()
+  "
+  icon="check"
+></app-icon-button>

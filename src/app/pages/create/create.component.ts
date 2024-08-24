@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { TextFieldComponent } from '../../components/text-field/text-field.component';
 import { NgIf } from '@angular/common';
-import { ListItemComponent } from '../../components/list-item/list-item.component';
-import { ChipComponent } from '../../components/chip/chip.component';
 import { ButtonComponent } from '../../components/button/button.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [NavbarComponent, TextFieldComponent, NgIf, ListItemComponent, ChipComponent, ButtonComponent],
+  imports: [NavbarComponent, NgIf, ButtonComponent, RouterOutlet],
   templateUrl: './create.component.html',
-  styleUrl: './create.component.scss'
+  styleUrl: './create.component.scss',
 })
 export class CreateComponent {
+  page: number = 0;
+
   data = {
     title: '',
     image: '',
-    ingredients: [''],
-    instructions: [''],
+    ingredients: [],
+    instructions: [],
   };
+
   scroll: boolean = false;
 
   handleFile(e: Event) {
