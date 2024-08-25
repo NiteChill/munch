@@ -1,0 +1,11 @@
+<div (click)="customTextField.focus()">
+  <input
+    type="text"
+    autocomplete="off"
+    class="body-large"
+    placeholder="{{ label }}"
+    (input)="handleInput($event)"
+    #customTextField
+  />
+  <app-icon-button *ngIf="customTextField.value !== ''" icon="close" (onClick)="handleClear()"></app-icon-button>
+</div>

@@ -1,10 +1,10 @@
-<section *ngIf="page === 0" class="create-1">
-  <app-navbar
-    label=""
-    page="create-1"
-    class="p-l"
-    [form]="data"
-  ></app-navbar>
+<!-- page 1 -->
+<section *ngIf="!page" class="create-1">
+  <nav>
+    <app-icon-button btnStyle="filled" icon="arrow_back" (onClick)="back()"></app-icon-button>
+    <h1 class="title-large">New recipe</h1>
+    <app-icon-button btnStyle="filled" icon="more_vert"></app-icon-button>
+  </nav>
   <main>
     <label for="image">
       <input
@@ -22,29 +22,20 @@
       </div>
     </label>
   </main>
+  <footer>
+    <app-custom-text-field (output)="handleInput($event)" label="New recipe name"></app-custom-text-field>
+    <app-fab icon="check"></app-fab>
+  </footer>
 </section>
-<section *ngIf="page === 1" class="create-2">
-  <app-navbar
-    label="Recipe name"
-    page="create-2"
-    class="p-l"
-    [form]="data"
-  ></app-navbar>
+
+<!-- page 2 -->
+<section *ngIf="page" class="create-2">
+  <nav>
+    <app-icon-button btnStyle="filled" icon="arrow_back" (onClick)="this.page = 0"></app-icon-button>
+    <h1 class="title-large">New recipe</h1>
+    <app-icon-button btnStyle="filled" icon="check"></app-icon-button>
+  </nav>
   <main>
-    <label for="image">
-      <input
-        type="file"
-        name="image"
-        accept="image/*"
-        id="image"
-        (input)="handleFile($event)"
-      />
-      <div>
-        <span *ngIf="!data.image" class="material-symbols-rounded">
-          add_photo_alternate
-        </span>
-        <img *ngIf="data.image" src="{{ data.image }}" alt="recipe" />
-      </div>
-    </label>
+
   </main>
 </section>

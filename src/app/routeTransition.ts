@@ -71,38 +71,3 @@ export const routeTransition = trigger('routeTransition', [
     ]),
   ]),
 ]);
-
-export const pagesTransition = trigger('pagesTransition', [
-  transition('* => void', [
-    query(':leave', [
-      animate('0.1s cubic-bezier(0, 0, 0.2, 1)', style({ opacity: 0 })),
-    ]),
-  ]),
-  transition('home <=> saved, home <=> groceries, saved <=> groceries', [
-    query(':enter', [style({ opacity: 0, scale: 0.95 })], { optional: true }),
-    query(
-      ':leave',
-      [
-        animate(
-          '0.1s cubic-bezier(0, 0, 0.2, 1)',
-          style({ opacity: 0, scale: 0.95 })
-        ),
-      ],
-      {
-        optional: true,
-      }
-    ),
-    query(
-      ':enter',
-      [
-        animate(
-          '0.1s cubic-bezier(0, 0, 0.2, 1)',
-          style({ opacity: 1, scale: 1 })
-        ),
-      ],
-      {
-        optional: true,
-      }
-    ),
-  ]),
-]);
