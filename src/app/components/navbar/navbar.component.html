@@ -2,7 +2,7 @@
   *ngIf="page == 'create-1' || page == 'create-2'"
   btnStyle="filled"
   icon="arrow_back"
-  (click)="back()"
+  (onClick)="back()"
 ></app-icon-button>
 <app-icon-button
   *ngIf="page !== 'create-1' && page !== 'create-2'"
@@ -29,7 +29,7 @@
 <app-icon-button
   *ngIf="page === 'create-2'"
   btnStyle="filled"
-  (click)="
+  (onClick)="
     form.title !== '' &&
       form.image !== '' &&
       form.ingredients!.length > 0 &&

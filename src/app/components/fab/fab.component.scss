@@ -1,0 +1,56 @@
+:host {
+  display: contents;
+}
+
+:host(.fixed) {
+  .fab {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+.fab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-container);
+  border-radius: 1.75rem;
+  box-shadow: var(--elevation-3);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  height: fit-content;
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    border-radius: inherit;
+    padding: 1.25rem;
+    & > span {
+      color: var(--on-primary-container);
+    }
+  }
+  &:hover > div {
+    background: color-mix(in srgb, var(--on-primary-container) 8%, transparent);
+  }
+  &:active > div {
+    background: color-mix(
+      in srgb,
+      var(--on-primary-container) 12%,
+      transparent
+    );
+  }
+  &:focus-visible {
+    outline: 2px solid var(--on-surface);
+    & > div {
+      background: color-mix(
+        in srgb,
+        var(--on-primary-container) 16%,
+        transparent
+      );
+    }
+  }
+}

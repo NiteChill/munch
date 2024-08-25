@@ -8,7 +8,7 @@ import {
 } from '@angular/animations';
 
 export const routeTransition = trigger('routeTransition', [
-  transition('pages => create', [
+  transition('* => create', [
     query(':enter', [style({ opacity: 0, left: '10%', right: 0 })], {
       optional: true,
     }),
@@ -39,7 +39,7 @@ export const routeTransition = trigger('routeTransition', [
       ),
     ]),
   ]),
-  transition('create => pages', [
+  transition('create => *', [
     query(':enter', [style({ opacity: 0, transform: 'translateX(-10%)' })], {
       optional: true,
     }),

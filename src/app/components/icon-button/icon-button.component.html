@@ -1,4 +1,9 @@
-<button class="icon-button {{ btnStyle }}  {{ active ? 'active' : '' }}" aria-roledescription="button" role="button">
+<button
+  class="icon-button {{ btnStyle }}  {{ active ? 'active' : '' }}"
+  aria-roledescription="button"
+  role="button"
+  (click)="handleClick()"
+>
   <div>
     <div>
       <span class="material-symbols-rounded">
