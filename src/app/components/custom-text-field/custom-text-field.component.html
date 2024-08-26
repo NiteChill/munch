@@ -6,6 +6,7 @@
     placeholder="{{ label }}"
     (input)="handleInput($event)"
     #customTextField
+    value="{{this.input}}"
   />
   <app-icon-button *ngIf="customTextField.value !== ''" icon="close" (onClick)="handleClear()"></app-icon-button>
 </div>

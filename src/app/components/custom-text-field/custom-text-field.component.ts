@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
 })
 export class CustomTextFieldComponent {
   @Input() label: String = 'Label';
-  input: String = '';
+  @Input() input: String = '';
   @Output() output = new EventEmitter<string>();
   @Input() trailingIcon: String = 'cancel';
   @ViewChild('customTextField') customTextField!: ElementRef;

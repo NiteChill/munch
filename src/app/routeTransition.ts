@@ -9,9 +9,13 @@ import {
 
 export const routeTransition = trigger('routeTransition', [
   transition('* => create', [
-    query(':enter', [style({ opacity: 0, left: '10%', right: 0 })], {
-      optional: true,
-    }),
+    query(
+      ':enter',
+      [style({ opacity: 0, transform: 'translateX(10%)', right: 0 })],
+      {
+        optional: true,
+      }
+    ),
     group([
       query(
         ':leave',
@@ -30,7 +34,7 @@ export const routeTransition = trigger('routeTransition', [
         [
           animate(
             '0.2s cubic-bezier(0.5, 0, 0.2, 1)',
-            style({ opacity: 1, left: 0 })
+            style({ opacity: 1, transform: 'translateX(0)' })
           ),
         ],
         {
@@ -49,7 +53,7 @@ export const routeTransition = trigger('routeTransition', [
         [
           animate(
             '0.2s cubic-bezier(0.5, 0, 0.2, 1)',
-            style({ opacity: 0, left: '10%', right: 0 })
+            style({ opacity: 0, transform: 'translateX(10%)' })
           ),
         ],
         {

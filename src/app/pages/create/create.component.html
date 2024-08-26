@@ -1,5 +1,5 @@
 <!-- page 1 -->
-<section *ngIf="!page" class="create-1">
+<section *ngIf="!page" class="create-1" [@createPageTransition]="!page && 0">
   <nav>
     <app-icon-button btnStyle="filled" icon="arrow_back" (onClick)="back()"></app-icon-button>
     <h1 class="title-large">New recipe</h1>
@@ -13,6 +13,7 @@
         accept="image/*"
         id="image"
         (input)="handleFile($event)"
+        value=""
       />
       <div>
         <span *ngIf="!data.image" class="material-symbols-rounded">
@@ -23,17 +24,17 @@
     </label>
   </main>
   <footer>
-    <app-custom-text-field (output)="handleInput($event)" label="New recipe name"></app-custom-text-field>
-    <app-fab icon="check"></app-fab>
+    <app-custom-text-field (output)="handleInput($event)" label="New recipe name" input="{{this.data.title}}"></app-custom-text-field>
+    <app-fab icon="check" (onClick)="this.page = 1"></app-fab>
   </footer>
 </section>
 
 <!-- page 2 -->
-<section *ngIf="page" class="create-2">
+<section *ngIf="page" class="create-2" [@createPageTransition]="page && 1">
   <nav>
     <app-icon-button btnStyle="filled" icon="arrow_back" (onClick)="this.page = 0"></app-icon-button>
-    <h1 class="title-large">New recipe</h1>
-    <app-icon-button btnStyle="filled" icon="check"></app-icon-button>
+    <h1 class="title-large">Recipe name</h1>
+    <app-icon-button btnStyle="filled" icon="check" (onClick)="handleSubmit()"></app-icon-button>
   </nav>
   <main>
 
